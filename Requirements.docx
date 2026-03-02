@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+tensorflow
+keras
+pillow
+numpy
+pyngrok
+nest-asyncio
+matplotlib
