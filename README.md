@@ -7,14 +7,14 @@ A deep learning project that detects lung and colon cancer from histopathologica
 ## 📁 Project Structure
 
 ```
+
 cancer-classifier-api/
-├── API/
-│   └── main.py              # FastAPI server
-├── model/
-│   └── model.keras          # Trained CNN model
-├── training/
-│   └── notebook.ipynb       # Model training notebook (Google Colab)
-└── Requirements.docx        # Project requirements
+├── model/                   # Trained CNN model
+├── training/                # Model training notebook (Google Colab)
+├── API.ipynb                # FastAPI server notebook (Google Colab + ngrok)
+├── Requirements.docx        # Project requirements
+└── README.md
+
 ```
 
 ---
