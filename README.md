@@ -5,16 +5,13 @@ A deep learning project that detects lung and colon cancer from histopathologica
 ---
 
 ## 📁 Project Structure
-
 ```
-
 cancer-classifier-api/
 ├── model/                   # Trained CNN model
 ├── training/                # Model training notebook (Google Colab)
 ├── API.ipynb                # FastAPI server notebook (Google Colab + ngrok)
 ├── Requirements.docx        # Project requirements
 └── README.md
-
 ```
 
 ---
@@ -23,11 +20,11 @@ cancer-classifier-api/
 
 | Class | Description |
 |---|---|
-| `colon_aca` | Colon Adenocarcinoma |
-| `colon_n` | Colon Benign Tissue |
-| `lung_aca` | Lung Adenocarcinoma |
-| `lung_n` | Lung Benign Tissue |
-| `lung_scc` | Lung Squamous Cell Carcinoma |
+| `Colon Adenocarcinoma` | Malignant colon tumor |
+| `Colon Benign Tissue` | Healthy colon tissue |
+| `Lung Adenocarcinoma` | Malignant lung tumor |
+| `Lung Benign Tissue` | Healthy lung tissue |
+| `Lung Squamous Cell Carcinoma` | Malignant lung squamous tumor |
 
 ---
 
@@ -48,33 +45,30 @@ cancer-classifier-api/
 
 ---
 
-## 🚀 Running the API
+## 🚀 Running the API (Google Colab)
 
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/AnishPanicker/cancer-classifier-api.git
-cd cancer-classifier-api
-```
+### 1. Open `API.ipynb` in Google Colab
 
 ### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
+```python
+!pip install fastapi uvicorn pyngrok nest-asyncio pillow numpy -q
 ```
 
-### 3. Run the server
-
-```bash
-cd API
-uvicorn main:app --host localhost --port 8000 --reload
+### 3. Set your ngrok token
+```python
+ngrok.set_auth_token("YOUR_NGROK_TOKEN_HERE")  # Get from https://dashboard.ngrok.com
 ```
 
-### 4. Open in browser
+### 4. Run all cells — you will get a public URL like:
+```
+https://xxxx.ngrok-free.app
+```
 
-```
-http://localhost:8000/docs
-```
+---
+
+## ⚠️ Important
+
+Never commit your ngrok token to GitHub. Always replace it with `YOUR_NGROK_TOKEN_HERE` before pushing.
 
 ---
 
@@ -87,10 +81,9 @@ http://localhost:8000/docs
 | GET | `/docs` | Swagger UI for testing |
 
 ### Example Response
-
 ```json
 {
-  "class": "Lung Benign Tissue",
+  "class": "Lung Adenocarcinoma",
   "confidence": 95.23
 }
 ```
@@ -102,6 +95,7 @@ http://localhost:8000/docs
 - **Model Training:** TensorFlow / Keras
 - **API Framework:** FastAPI
 - **Server:** Uvicorn
+- **Tunneling:** ngrok
 - **Image Processing:** Pillow, NumPy
 - **Visualization:** Matplotlib
 - **Environment:** Google Colab
@@ -109,7 +103,6 @@ http://localhost:8000/docs
 ---
 
 ## 📦 Requirements
-
 ```
 fastapi
 uvicorn
