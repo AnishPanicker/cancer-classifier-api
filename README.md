@@ -130,4 +130,3 @@ nest-asyncio
 [GitHub](https://github.com/AnishPanicker)
 
 ---
-ilable under the [MIT License](LICENSE).
