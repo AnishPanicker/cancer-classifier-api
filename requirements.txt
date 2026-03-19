@@ -7,3 +7,4 @@ numpy
 matplotlib
 pyngrok
 nest-asyncio
+python-multipart
